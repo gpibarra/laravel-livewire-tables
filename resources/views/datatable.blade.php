@@ -1,7 +1,9 @@
 <x-livewire-tables::wrapper :component="$this">
     <x-livewire-tables::tools>
-        <x-livewire-tables::tools.sorting-pills />
-        <x-livewire-tables::tools.filter-pills />
+        <div>
+            <x-livewire-tables::tools.sorting-pills />
+            <x-livewire-tables::tools.filter-pills />
+        </div>
         <x-livewire-tables::tools.toolbar />
     </x-livewire-tables::tools>
 

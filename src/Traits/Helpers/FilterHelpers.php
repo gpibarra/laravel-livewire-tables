@@ -122,10 +122,13 @@ trait FilterHelpers
 
     public function setFilterDefaults(): void
     {
+        // foreach ($this->getFilters() as $filter) {
+        //     if ($filter->isResetByClearButton()) {
+        //         $this->resetFilter($filter);
+        //     }
+        // }
         foreach ($this->getFilters() as $filter) {
-            if ($filter->isResetByClearButton()) {
-                $this->resetFilter($filter);
-            }
+            $this->setFilter($filter->getKey(), $filter->getDefaultValue());
         }
     }
 
@@ -193,6 +196,16 @@ trait FilterHelpers
         }
 
         $this->setFilter($filter->getKey(), $filter->getDefaultValue());
+        $this->emitSelf('reset-' . $this->getTableName() . '-filter-' . $filter->getKey());
+    }
+
+    public function resetFilters(): void
+    {
+        foreach ($this->getFilters() as $filter) {
+            if ($filter->isResetByClearButton()) {
+                $this->resetFilter($filter);
+            }
+        }
     }
 
     public function getFilterLayout(): string

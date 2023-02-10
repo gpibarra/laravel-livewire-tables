@@ -316,6 +316,9 @@
 
     @if ($component->filtersAreEnabled() && $component->filtersVisibilityIsEnabled() && $component->hasVisibleFilters() && $component->isFilterLayoutSlideDown())
         <div
+            wire:ignore.self
+        >
+        <div
             x-cloak
             x-show="filtersOpen"
             x-transition:enter="transition ease-out duration-100"
@@ -339,6 +342,7 @@
                     @endif
                 @endforeach
             </div>
+        </div>
         </div>
     @endif
 @elseif ($theme === 'bootstrap-4')
@@ -584,10 +588,14 @@
 
     @if ($component->filtersAreEnabled() && $component->filtersVisibilityIsEnabled() && $component->hasVisibleFilters() && $component->isFilterLayoutSlideDown())
         <div
+            wire:ignore.self
+
+        >
+        <div
             x-cloak
             x-show="filtersOpen"
         >
-            <div class="container">
+            <div>
                 <div class="row">
                     @foreach($component->getFilters() as $filter)
                         @if($filter->isVisibleInMenus())
@@ -603,6 +611,7 @@
                     @endforeach
                 </div>
             </div>
+        </div>
         </div>
     @endif
 @elseif ($theme === 'bootstrap-5')
@@ -850,10 +859,14 @@
 
     @if ($component->filtersAreEnabled() && $component->filtersVisibilityIsEnabled() && $component->hasVisibleFilters() && $component->isFilterLayoutSlideDown())
         <div
+            wire:ignore.self
+
+        >
+        <div
             x-cloak
             x-show="filtersOpen"
         >
-            <div class="container">
+            <div>
                 <div class="row">
                     @foreach($component->getFilters() as $filter)
                         @if($filter->isVisibleInMenus())
@@ -869,6 +882,7 @@
                     @endforeach
                 </div>
             </div>
+        </div>
         </div>
     @endif
 @endif

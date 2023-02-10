@@ -38,7 +38,7 @@
                 @endforeach
 
                 <button
-                    wire:click.prevent="setFilterDefaults"
+                    wire:click.prevent="resetFilters"
                     class="focus:outline-none active:outline-none"
                 >
                     <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 dark:bg-gray-200 dark:text-gray-900">
@@ -83,7 +83,7 @@
 
                 <a
                     href="#"
-                    wire:click.prevent="setFilterDefaults"
+                    wire:click.prevent="resetFilters"
                     class="badge badge-pill badge-light"
                 >
                     @lang('Clear')
@@ -126,7 +126,7 @@
 
                 <a
                     href="#"
-                    wire:click.prevent="setFilterDefaults"
+                    wire:click.prevent="resetFilters"
                     class="badge rounded-pill bg-light text-dark text-decoration-none"
                 >
                     @lang('Clear')
